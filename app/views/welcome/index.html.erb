@@ -1,2 +1,33 @@
 <h1>Welcome to Wikiful</h1>
-<ps>Suck it Bitch!</p>
+<h4>Here's What's new</h4>
+	<%- model_class = Article -%>
+<div class="page-header">
+  
+</div>
+
+      
+  
+  <body>
+    <% @recent_articles.each do |article| %>
+           
+        <h2><%= link_to article.title, article %></h2>
+
+      
+	 <p><%= article.created_at.strftime('%b %d, %Y') %></P> 
+
+ 		<h5><%= article.categories.map { |category| link_to category.name, category_path(category.id)}.join(', ').html_safe %> </h5>
+
+
+        <p><%= truncate(article.content, length: 300) %></p>
+       <%= link_to "View Full Article", article %>
+        
+          
+      
+    <% end %>
+  </body>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_article_path,
+            :class => 'btn btn-primary' %>
+       
