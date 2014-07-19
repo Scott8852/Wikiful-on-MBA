@@ -1,7 +1,9 @@
-<div>
+
   <h1><%= @category.name %></h1>
+  <ul>
   <% @category.articles.order(created_at: :desc).each do |article| %>
   <h4>
   	<%= link_to article.title, article %>
   </h4>
   <% end %>
+</ul>
