@@ -36,7 +36,13 @@
     <h4>Categories</h4>
     <ul>
       <% @categories.each do |category| %>
-        <li><%= link_to category.name, category %></li>
+
+       <h5> 
+        
+        <%= link_to category.name, category %>
+        <div class="pull-right"><span class="badge"><%= category.articles.count %></span></div> </h5>
+        
+
       <% end %>
     </ul>
   </div>
