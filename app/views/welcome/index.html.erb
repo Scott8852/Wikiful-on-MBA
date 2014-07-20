@@ -1,27 +1,32 @@
 <h1>Welcome to Wikiful</h1>
-<h4>Here's What's new</h4>
-	<%- model_class = Article -%>
+  <p>A Thinkful Product</p>
+
 <div class="page-header">
   
 </div>
 
-      
+
+
   
   <body>
     <% @recent_articles.each do |article| %>
-           
-        <h2><%= link_to article.title, article %></h2>
+
+       	 	            <div class="well well-small">
+
+        <h4><%= link_to article.title, article %></h4>
 
       
 	 <p><%= article.created_at.strftime('%b %d, %Y') %></P> 
 
- 		<h5><%= article.categories.map { |category| link_to category.name, category_path(category.id)}.join(', ').html_safe %> </h5>
 
+
+ 		<h5><%= article.categories.map { |category| link_to category.name, category_path(category.id)}.join(', ').html_safe %> </h5>
 
         <p><%= truncate(article.content, length: 300) %></p>
        <%= link_to "View Full Article", article %>
-        
-          
+
+  
+</div>
       
     <% end %>
   </body>
