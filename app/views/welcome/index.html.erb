@@ -19,7 +19,6 @@
 	 <p><%= article.created_at.strftime('%b %d, %Y') %></P> 
 
 
-
  		<h5><%= article.categories.map { |category| link_to category.name, category_path(category.id)}.join(', ').html_safe %> </h5>
 
         <p><%= truncate(article.content, length: 300) %></p>

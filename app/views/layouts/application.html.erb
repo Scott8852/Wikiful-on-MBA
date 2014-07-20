@@ -17,6 +17,7 @@
     <div class="container">
       <%= link_to "Wikiful", root_path, :class => "brand" %>
       <div style="float: right;">Eventually log in/out and sign up links will go here</div>
+
     </div>
   </div>
 </div>
@@ -25,13 +26,13 @@
   <div class="row">
     <div class="span9"><%= yield %></div>
     <div class="span3 sidebar">
-  <div class="my-wiki-site">
+  <div class="well well-small">
     <h4>My Wikiful</h4>
     <ul>
       <li><%= link_to "Write a Wiki", new_article_path %></li>
     </ul>
   </div>
-  <div class="categories-sidebar">
+  <div class="well well-small">
     <h4>Categories</h4>
     <ul>
       <% @categories.each do |category| %>
@@ -39,9 +40,9 @@
       <% end %>
     </ul>
   </div>
-  <div class="about">
+  <div class="well well-small">
     <h4>About Wikiful</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto earum neque perspiciatis quia animi debitis quod repellat vitae explicabo. Sapiente aliquam reprehenderit id vitae atque ducimus facere molestias soluta?</p>
+    <p>Wikiful is a Thinkful project that feels a lot more like Twitter. Feel free to create a new Article (Tweet). By the way I'm really good at making wells.</p>
   </div>
 </div>
   </div>

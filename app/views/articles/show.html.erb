@@ -1,22 +1,22 @@
 <%- model_class = Article -%>
 <div class="page-header">
   <h2><%= @article.title %></h2>
- 
+ </div>
 
-</div>
+<div class="well well-small">
   <h5><%= @article.categories.map { |category| link_to category.name, category_path(category.id)}.join(', ').html_safe %></h5>
-<div class="form-actions">
-  <div class="panel-body">
+
+
   
   <dd><p><%= @article.created_at.strftime('%b %d, %Y') %></P> </dd>
-  </div>
-</div>
+
+
 <dl class="dl-vertical">
- 
+
 
   <dd><%= @article.content %></dd>
+</div>
 </dl>
-
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               articles_path, :class => 'btn'  %>
