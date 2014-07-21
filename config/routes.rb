@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :users
+resources :sessions
+resources :users
 
   get 'welcome/index'
 
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
 resources :articles
 resources :categories
 resources :users
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
